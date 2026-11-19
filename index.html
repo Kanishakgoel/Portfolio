@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kanishak Goel Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232d3df5'/%3E%3Ctext x='32' y='42' font-family='Arial Black,Arial' font-weight='900' font-size='28' text-anchor='middle' fill='white'%3EKG%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Kanishak Goel · Project Manager">
+<meta property="og:description" content="Project manager at Callidora Technology: CalliVisit, CalliGrad, AdoraHR and Wayzora.">
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Kanishak Goel, project manager. Selected work, experience, education and how I run projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a magazine-style portfolio deck. Each section is a "spread" with a
+   huge chapter word, a photo-led hero with a spinning badge, and work shown
+   as big image plates. Espresso + greige from the headshot, cobalt as the one loud colour. */
+:root {
+  --paper: #ebe6e0;      /* page */
+  --card: #f7f4f0;       /* raised surfaces */
+  --ink: #231814;        /* espresso text */
+  --muted: #5a4d46;      /* secondary text */
+  --t-cv: #d6ebea;  --t-cg: #dde2f4;  --t-ahr: #e8e0f4;  --t-wz: #f6e0dd;  --t-doc: #e6ddd3;  /* project tints */
+  --line: #d3c9bf;       /* hairlines */
+  --cobalt: #2d3df5;     /* the accent */
+  --on-cobalt: #ffffff;
+  --band: #231814;       /* dark band background */
+  --on-band: #efe7df;
+  --ph-bg: rgba(45, 61, 245, .08);
+
+  --display: 'Bricolage Grotesque', 'Arial Black', system-ui, sans-serif;
+  --body: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --gut: max(16px, env(safe-area-inset-left, 0px));
+  --gut-r: max(16px, env(safe-area-inset-right, 0px));
+  --max: 1240px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #16110e; --card: #211a16; --ink: #efe7df; --muted: #c4b7ac; --line: #3a2f29; --t-cv: #1d3331; --t-cg: #1f2440; --t-ahr: #2b2340; --t-wz: #3a2321; --t-doc: #2c241f;
+    --cobalt: #7f8cff; --on-cobalt: #0e0b2e; --band: #0d0a08; --on-band: #efe7df; --ph-bg: rgba(127, 140, 255, .12);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #16110e; --card: #211a16; --ink: #efe7df; --muted: #c4b7ac; --line: #3a2f29; --t-cv: #1d3331; --t-cg: #1f2440; --t-ahr: #2b2340; --t-wz: #3a2321; --t-doc: #2c241f;
+  --cobalt: #7f8cff; --on-cobalt: #0e0b2e; --band: #0d0a08; --on-band: #efe7df; --ph-bg: rgba(127, 140, 255, .12);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 400 17px/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -.02em; }
+p { margin: 0; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: var(--gut); padding-right: var(--gut-r); }
+.label { font: 500 12px/1.3 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+/* placeholder: anything still to be filled from LinkedIn */
+.ph {
+  background: var(--ph-bg); color: var(--cobalt);
+  border-bottom: 1.5px dashed var(--cobalt);
+  padding: 0 .25em; border-radius: 3px;
+}
+.ph-block {
+  border: 1.5px dashed var(--cobalt); background: var(--ph-bg); color: var(--ink);
+  border-radius: 14px; padding: 18px 20px; display: grid; gap: 6px;
+}
+.ph-block .label { color: var(--cobalt); }
+
+/* ---------- nav ---------- */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+.mark { font: 800 20px/1 var(--display); text-decoration: none; letter-spacing: -.03em; }
+.mark span { color: var(--cobalt); }
+.nav ul { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; }
+.nav ul a { text-decoration: none; font-weight: 500; font-size: 15px; padding: 8px 12px; border-radius: 99px; }
+.nav ul a:hover { background: var(--card); }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; text-decoration: none; cursor: pointer;
+  font: 600 15px/1 var(--body); padding: 12px 18px; border-radius: 99px; border: 0;
+  background: var(--cobalt); color: var(--on-cobalt);
+}
+.btn.ghost { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
+@media (max-width: 820px) { .nav ul { display: none; } }
+
+/* ---------- hero ---------- */
+.hero { padding-block: 40px 0; position: relative; overflow: hidden; }
+.hero-word {
+  font: 800 clamp(64px, 17.5vw, 250px)/.82 var(--display); letter-spacing: -.055em;
+  margin: 0; text-align: center; white-space: nowrap; color: var(--ink); user-select: none;
+}
+.hero-word span { color: var(--cobalt); }
+.hero-grid {
+  display: grid; grid-template-columns: 1fr minmax(0, 470px) 1fr; gap: 32px; align-items: end;
+  margin-top: clamp(-120px, -7vw, -40px); position: relative;
+}
+.hero-side { display: grid; gap: 14px; padding-bottom: 56px; min-width: 0; }
+.hero-side.right { text-align: right; justify-items: end; }
+.hero h1 { font-size: clamp(30px, 3.4vw, 46px); line-height: 1.02; font-weight: 800; }
+.hero .role { font: 600 clamp(18px, 1.6vw, 22px)/1.3 var(--display); }
+.hero .lede { color: var(--muted); max-width: 30ch; }
+.photo { position: relative; max-width: 100%; }
+.photo::before { content: ""; position: absolute; left: 12%; right: 12%; top: 4%; aspect-ratio: 1; border-radius: 50%; background: var(--cobalt); }
+.photo img { position: relative; width: 100%; height: auto; display: block; filter: drop-shadow(0 20px 30px rgba(35,24,20,.25)); }
+.badge {
+  position: absolute; z-index: 2; right: -20px; top: 8%; width: 132px; height: 132px; border-radius: 50%;
+  background: var(--cobalt); color: var(--on-cobalt); display: grid; place-items: center;
+}
+.badge svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 18s linear infinite; }
+.badge text { font: 500 10px var(--mono); fill: currentColor; }
+.badge b { font: 800 30px/1 var(--display); }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .badge svg { animation: none; } }
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; margin-top: 18px; justify-items: center; text-align: center; }
+  .hero-side, .hero-side.right { text-align: center; justify-items: center; padding: 0; }
+  .hero-actions { justify-content: center; }
+  .photo { width: min(360px, 86vw); order: -1; margin-top: -8px; }
+  .photo::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 18%; background: linear-gradient(transparent, var(--paper)); }
+  .hero { padding-bottom: 40px; }
+  .badge { right: -14px; width: 104px; height: 104px; }
+  .badge b { font-size: 24px; }
+}
+
+/* ---------- marquee ---------- */
+.ticker { background: var(--cobalt); color: var(--on-cobalt); overflow: hidden; padding-block: 14px; }
+.ticker-track { display: flex; gap: 40px; width: max-content; animation: slide 40s linear infinite; }
+.ticker span { font: 600 22px/1 var(--display); white-space: nowrap; display: inline-flex; align-items: center; gap: 40px; }
+.ticker span::after { content: "✳"; font-size: 18px; }
+@keyframes slide { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
+/* ---------- sections ---------- */
+section.spread { padding-block: clamp(64px, 9vw, 120px); }
+.chapter { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-bottom: 2px solid var(--ink); padding-bottom: 14px; margin-bottom: clamp(32px, 5vw, 56px); flex-wrap: wrap; }
+.chapter h2 { font-size: clamp(44px, 8vw, 104px); line-height: .9; font-weight: 800; letter-spacing: -.045em; }
+.chapter h2 em { font-style: normal; color: var(--cobalt); }
+
+/* about */
+.about { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+.about-lead { color: var(--ink); font: 600 clamp(24px, 2.6vw, 34px)/1.25 var(--display); letter-spacing: -.015em; }
+.about-lead mark { background: none; color: var(--cobalt); }
+.about-body { display: grid; gap: 18px; color: var(--muted); max-width: 62ch; }
+.facts { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.facts div { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding-block: 14px; border-bottom: 1px solid var(--line); }
+.facts dt { margin: 0; } .facts dd { margin: 0; font-weight: 500; min-width: 0; }
+@media (max-width: 820px) { .about { grid-template-columns: 1fr; } }
+
+/* numbers */
+.numbers { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: clamp(48px, 7vw, 88px); }
+.numbers div { padding: 26px 20px 26px 0; display: grid; gap: 6px; }
+.numbers div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+.numbers b { color: var(--cobalt); font: 800 clamp(36px, 4.4vw, 60px)/1 var(--display); letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.numbers span { color: var(--muted); font-size: 15px; }
+@media (max-width: 820px) {
+  .numbers { grid-template-columns: 1fr 1fr; }
+  .numbers div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .numbers div:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+
+/* dark band: experience + education */
+.band { background: var(--band); color: var(--on-band); }
+.band .chapter { border-color: var(--on-band); }
+.band .label { color: color-mix(in srgb, var(--on-band) 62%, transparent); }
+.band .ph-block { color: var(--on-band); }
+.timeline { display: grid; gap: 0; }
+.job { display: grid; grid-template-columns: 200px 1fr; gap: 28px; padding-block: 28px; border-top: 1px solid color-mix(in srgb, var(--on-band) 20%, transparent); }
+.job:first-child { border-top: 0; padding-top: 0; }
+.job h3 { font-size: clamp(24px, 2.4vw, 32px); font-weight: 600; }
+.job .org { font-weight: 600; color: var(--cobalt); margin-top: 4px; }
+.job ul { margin: 16px 0 0; padding-left: 18px; display: grid; gap: 8px; max-width: 70ch; color: color-mix(in srgb, var(--on-band) 82%, transparent); }
+.band .job .org, .band .gpa b, .band .chapter h2 em { color: #9aa4ff; }
+.job .when { display: grid; gap: 6px; align-content: start; }
+.job .when b { font: 500 15px/1.3 var(--mono); }
+.job > div { min-width: 0; }
+@media (max-width: 720px) { .job { grid-template-columns: 1fr; gap: 10px; } }
+.edu-head { margin-top: clamp(72px, 9vw, 112px); }
+.edu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.edu article { border: 1px solid color-mix(in srgb, var(--on-band) 22%, transparent); border-radius: 20px; padding: 26px; display: grid; gap: 10px; align-content: start; }
+.edu h3 { font-size: 24px; font-weight: 600; }
+@media (max-width: 720px) { .edu { grid-template-columns: 1fr; } }
+
+/* work */
+.case { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(28px, 4vw, 64px); align-items: center; padding-block: clamp(36px, 5vw, 64px); border-top: 1px solid var(--line); }
+.case:first-of-type, #cg + .case, #cv + .case { border-top: 0; padding-top: 0; }
+.case.flip .plate { order: 2; }
+.case > * { min-width: 0; }
+.plate { border-radius: 24px; overflow: hidden; position: relative; aspect-ratio: 5 / 4; max-width: 100%; }
+.plate.blue { background: var(--t-cv); }
+.plate.taupe { background: var(--t-doc); }
+.plate.ink { background: #231814; }
+.plate img { position: absolute; border-radius: 10px; box-shadow: 0 24px 50px -20px rgba(0,0,0,.55); }
+.p-standee { width: 64%; left: 6%; top: 8%; transform: rotate(-4deg); }
+.p-brochure { width: 34%; right: 6%; bottom: 7%; transform: rotate(5deg); }
+.p-script { width: 26%; right: 26%; top: 6%; transform: rotate(9deg); opacity: .96; }
+.p-guard { width: 50%; left: 50%; top: 9%; transform: translateX(-50%) rotate(-2deg); }
+.p-dash { width: 86%; left: 7%; top: 16%; }
+.p-pop { width: 46%; right: 5%; bottom: 10%; border-radius: 12px; }
+.case .tag { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.case .tag span { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; padding: 7px 10px; border-radius: 99px; border: 1px solid var(--line); color: var(--muted); }
+.case h3 { font-size: clamp(30px, 3.4vw, 46px); line-height: 1; font-weight: 800; letter-spacing: -.035em; }
+.case p.sum { margin-top: 14px; color: var(--muted); max-width: 52ch; }
+.case dl { margin: 22px 0 0; display: grid; gap: 14px; }
+.case dl div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; }
+.case dt { margin: 0; padding-top: 3px; } .case dd { margin: 0; min-width: 0; }
+@media (max-width: 860px) { .case { grid-template-columns: 1fr; } .case.flip .plate { order: 0; } }
+@media (max-width: 480px) { .case dl div { grid-template-columns: 1fr; gap: 2px; } }
+
+/* process */
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; counter-reset: s; }
+.steps li { list-style: none; background: var(--card); border-radius: 20px; padding: 24px; display: grid; gap: 10px; align-content: start; position: relative; }
+.steps li::before { counter-increment: s; content: "0" counter(s); font: 800 44px/1 var(--display); color: var(--cobalt); letter-spacing: -.04em; }
+.steps h3 { font-size: 22px; font-weight: 600; }
+.steps p { color: var(--muted); font-size: 15.5px; }
+.steps { padding: 0; margin: 0; }
+@media (max-width: 1100px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* skills */
+.skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+.skills h3 { font-size: 20px; font-weight: 600; margin-bottom: 14px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.chips li { padding: 9px 14px; border-radius: 99px; border: 1.5px solid var(--ink); font-weight: 500; font-size: 15px; }
+.chips.fill li { background: var(--ink); color: var(--paper); }
+@media (max-width: 860px) { .skills { grid-template-columns: 1fr; } }
+
+/* contact */
+.contact { background: var(--cobalt); color: var(--on-cobalt); }
+.contact .wrap { padding-block: clamp(72px, 10vw, 140px); display: grid; gap: 28px; }
+.contact h2 { font-size: clamp(48px, 9vw, 128px); line-height: .9; font-weight: 800; letter-spacing: -.05em; }
+.contact .label { color: inherit; opacity: .8; }
+.contact-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.contact .btn { background: var(--on-cobalt); color: var(--cobalt); }
+.contact .btn.ghost { background: transparent; color: var(--on-cobalt); box-shadow: inset 0 0 0 1.5px var(--on-cobalt); }
+.email { font: 600 clamp(20px, 2.4vw, 28px)/1.2 var(--display); user-select: all; overflow-wrap: anywhere; }
+.email.ph { color: inherit; background: rgba(255,255,255,.14); border-color: currentColor; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-block: 22px; font-size: 14px; color: var(--muted); }
+
+/* documentation plate */
+.docplate img { box-shadow: 0 20px 40px -18px rgba(0,0,0,.5); border-radius: 6px; }
+.p-srs { width: 40%; left: 5%; top: 6%; transform: rotate(-5deg); }
+.p-kick { width: 34%; left: 30%; top: 4%; transform: rotate(3deg); }
+@media (max-width: 600px) { .sheet .lg { display: none; } }
+.sheet { position: absolute; right: 5%; bottom: 7%; width: 82%; background: #fff; color: #231814; border-radius: 10px; overflow: hidden; box-shadow: 0 24px 50px -20px rgba(0,0,0,.55); font-size: clamp(9px, 1vw, 12px); }
+.sheet-top, .sheet-row { display: grid; grid-template-columns: 42% 1fr 1fr 1fr; align-items: center; }
+.sheet-top { background: #1d6f42; color: #fff; font-weight: 600; }
+.sheet-top > b, .sheet-top > span { padding: 7px 8px; }
+.sheet-top > span { border-left: 1px solid rgba(255,255,255,.25); }
+.sheet-row { position: relative; border-top: 1px solid #e6e1db; height: clamp(20px, 2.4vw, 28px); }
+.sheet-row em { font-style: normal; padding: 0 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-right: 1px solid #e6e1db; height: 100%; display: flex; align-items: center; }
+.sheet-row i { position: absolute; top: 28%; height: 44%; border-radius: 4px; background: #2d3df5;
+  left: calc(42% + 58% * var(--s) / 3); width: calc(58% * (var(--e) - var(--s)) / 3); }
+.sheet-row i.ms { background: #1d6f42; width: 12px; transform: rotate(45deg); border-radius: 2px; }
+.board { position: absolute; right: 5%; top: 7%; width: 40%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; background: #f4f5f7; border-radius: 10px; padding: 6px; box-shadow: 0 24px 50px -20px rgba(0,0,0,.55); font-size: clamp(8px, .85vw, 11px); color: #172b4d; }
+.board div { display: grid; gap: 4px; align-content: start; }
+.board span { font: 600 .9em var(--body); text-transform: uppercase; letter-spacing: .04em; color: #5e6c84; }
+.board p { margin: 0; background: #fff; border-radius: 4px; padding: 6px; box-shadow: 0 1px 0 rgba(9,30,66,.2); font-weight: 500; }
+.board div:nth-child(3) p { text-decoration: line-through; color: #5e6c84; }
+
+/* project index */
+.pindex { position: sticky; top: calc(64px + env(safe-area-inset-top, 0px)); z-index: 15; display: flex; gap: 8px; overflow-x: auto; padding-block: 12px; margin-bottom: 28px; background: var(--paper); scrollbar-width: none; }
+.pindex::-webkit-scrollbar { display: none; }
+.pindex a { flex: none; text-decoration: none; font-weight: 600; font-size: 14.5px; padding: 8px 14px; border-radius: 99px; border: 1.5px solid var(--line); background: var(--card); }
+.pindex a:hover, .pindex a.on { border-color: var(--cobalt); color: var(--cobalt); }
+.case[id] { scroll-margin-top: 150px; }
+
+/* plates: one shared treatment */
+.plate { transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s; box-shadow: 0 1px 0 var(--line); }
+.case:hover .plate { transform: translateY(-6px); box-shadow: 0 30px 60px -36px rgba(35,24,20,.55); }
+.plate img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.plate.shot:hover img { transform: scale(1.03); }
+
+/* reveal: content is visible by default; JS only hides what is below the fold, then reveals it */
+.rv { opacity: 0; transform: translateY(28px); }
+.rv.in { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+@media (prefers-reduced-motion: reduce) { .plate, .plate img { transition: none; } .case:hover .plate { transform: none; } .rv { opacity: 1; transform: none; } }
+
+/* project cards */
+.plate.shot { display: grid; place-items: center; padding: 6%; }
+.plate.shot img { position: static; width: 100%; height: auto; max-height: 100%; object-fit: contain; }
+.plate.adora { background: var(--t-ahr); }
+.plate.wayz { background: var(--t-wz); }
+.pnum { margin-bottom: 12px; color: var(--cobalt); }
+.case .visit { margin-top: 26px; }
+.plate.navy { background: var(--t-cv); }
+.p-cvdash { width: 88%; left: 6%; top: 12%; }
+.p-cvpop { width: 44%; left: 4%; bottom: 12%; border-radius: 12px; }
+.p-cvbro { width: 28%; right: 4%; bottom: -5%; transform: rotate(6deg); border-radius: 6px; }
+.plate.sand { background: #c9b8a6; display: grid; place-items: center; padding: 7%; }
+.plate.road { background: #231814; display: grid; place-items: center; padding: 7%; }
+.mock { width: 100%; background: #fbfaf8; color: #231814; border-radius: 14px; padding: clamp(16px, 2.4vw, 28px); display: grid; gap: 18px; box-shadow: 0 30px 60px -24px rgba(0,0,0,.5); }
+.mock.dark { background: #2e231e; color: #f3ece5; }
+.mock-bar { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; border-bottom: 1px solid rgba(128,110,98,.3); padding-bottom: 12px; }
+.mock-bar b { font: 800 clamp(20px, 2.2vw, 28px)/1 var(--display); letter-spacing: -.03em; }
+.mock-bar span { font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; opacity: .65; }
+.mock-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.mock-stats div { background: #efe9e2; border-radius: 10px; padding: 12px; display: grid; gap: 6px; min-width: 0; }
+.mock-stats span { font: 500 10.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: #6e6058; }
+.mock-stats b { font: 800 clamp(15px, 1.7vw, 22px)/1.1 var(--display); color: #2d3df5; }
+.mock-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.mock-chips li { font-size: 13px; font-weight: 500; padding: 6px 10px; border-radius: 99px; border: 1px solid #d3c9bf; }
+.flow { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.flow li { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,.07); border-radius: 10px; padding: 14px 16px; font: 600 clamp(16px, 1.7vw, 21px)/1.2 var(--display); }
+.flow li span { font: 500 12px var(--mono); color: #9aa4ff; }
+.mock-foot { font: 500 11px var(--mono); letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
+@media (max-width: 480px) { .mock-stats { grid-template-columns: 1fr; } }
+
+/* products */
+.products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: clamp(48px, 6vw, 80px); }
+.product { background: var(--card); border-radius: 20px; padding: 24px; display: grid; gap: 10px; align-content: start; text-decoration: none; min-width: 0; }
+.product h3 { font-size: 30px; font-weight: 800; letter-spacing: -.03em; }
+.product p { color: var(--muted); font-size: 15.5px; }
+.product { color: var(--ink); transition: transform .2s ease; }
+a.product:hover { transform: translateY(-4px); }
+.product .go { font-weight: 600; font-size: 14.5px; color: var(--cobalt); margin-top: 6px; }
+.product.hot { background: var(--cobalt); color: var(--on-cobalt); }
+.product.hot .label, .product.hot p, .product.hot .go { color: inherit; opacity: .88; }
+@media (prefers-reduced-motion: reduce) { .product { transition: none; } }
+.plate.cobalt-doc { background: var(--t-cg); display: grid; grid-template-rows: 1fr auto; padding: 7% 7% 6%; gap: 18px; }
+.docs { position: relative; }
+.doc { position: absolute; width: 58%; background: #fbfaf8; color: #231814; border-radius: 10px; padding: 16px; display: grid; gap: 8px; box-shadow: 0 24px 50px -20px rgba(0,0,0,.55); }
+.doc .label { color: #2d3df5; font-size: 10px; }
+.doc b { font: 700 clamp(13px, 1.4vw, 17px)/1.2 var(--display); }
+.doc i { display: block; height: 6px; border-radius: 3px; background: #e2dbd3; }
+.doc i.s { width: 60%; }
+.docs img { position: absolute; }
+.p-cgmock { width: 100%; left: 0; top: 4%; border-radius: 12px; }
+.p-cgbro { width: 30%; right: -2%; bottom: -6%; transform: rotate(6deg); border-radius: 6px; }
+.d1 { left: 0; top: 0; transform: rotate(-4deg); }
+.d2 { left: 30%; top: 28%; transform: rotate(3deg); }
+.d3 { right: 0; top: 56%; transform: rotate(-1deg); width: 50%; }
+.phases { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; counter-reset: ph; }
+.phases li { background: #fff; color: #231814; box-shadow: 0 6px 16px -10px rgba(0,0,0,.4); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; font-weight: 600; line-height: 1.25; }
+.phases li::before { counter-increment: ph; content: "Phase " counter(ph); display: block; font: 500 10px var(--mono); letter-spacing: .1em; color: #2d3df5; margin-bottom: 2px; }
+@media (max-width: 480px) { .phases li { font-size: 11px; padding: 6px; } .doc { padding: 10px; } }
+@media (max-width: 960px) { .products { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .products { grid-template-columns: 1fr; } }
+.gpa { font-size: 15px; } .gpa b { font: 800 36px/1 var(--display); color: var(--cobalt); margin-right: 4px; }
+.ach { margin: 0; padding-left: 18px; display: grid; gap: 6px; color: color-mix(in srgb, var(--on-band) 82%, transparent); }
+
+/* note for the owner, delete when the placeholders are filled */
+.todo-note {
+  position: fixed; z-index: 30; left: max(12px, env(safe-area-inset-left, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  max-width: min(360px, calc(100vw - 24px)); background: var(--card); color: var(--ink);
+  border: 1.5px dashed var(--cobalt); border-radius: 14px; padding: 12px 40px 12px 14px; font-size: 13.5px; line-height: 1.45;
+  box-shadow: 0 16px 40px -18px rgba(0,0,0,.4);
+}
+.todo-note button { position: absolute; top: 6px; right: 6px; width: 28px; height: 28px; border: 0; background: none; color: var(--muted); font-size: 18px; cursor: pointer; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+
+<!-- =============================================================
+  EDITING GUIDE
+  Anything wrapped in class="ph" or "ph-block" is a placeholder
+  waiting for your LinkedIn details. Replace the text, then remove
+  the class. Delete the .todo-note box at the bottom when done.
+============================================================== -->
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="#top">kanishak<span>.</span></a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#contact">Let’s talk</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="hero-word" aria-hidden="true">PORTF<span>O</span>LIO</p>
+      <div class="hero-grid">
+        <div class="hero-side">
+          <p class="label">Portfolio · 2026</p>
+          <h1>Kanishak<br>Goel</h1>
+          <p class="role">Project Manager</p>
+        </div>
+        <div class="photo">
+          <img src="assets/headshot-cut.webp" alt="Portrait of Kanishak Goel in a brown blazer and glasses" width="1000" height="984">
+          <div class="badge" aria-hidden="true">
+            <svg viewBox="0 0 132 132"><defs><path id="ring" d="M66,66 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs>
+              <text><textPath href="#ring" textLength="312" lengthAdjust="spacing">PLAN · RUN · SHIP · PLAN · RUN · SHIP · </textPath></text></svg>
+            <b>PM</b>
+          </div>
+        </div>
+        <div class="hero-side right">
+          <p class="lede">I take products from idea to launch: planning the work, lining up the people and shipping on time.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#work">See my work ↓</a>
+            <a class="btn ghost" href="assets/Kanishak-Goel-Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/kanishak-goel-%F0%9F%87%AE%F0%9F%87%B3-9227a531a/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Project planning</span><span>Product launches</span><span>Stakeholder management</span><span>Risk tracking</span><span>Go-to-market</span><span>Multilingual rollouts</span>
+      <span>Project planning</span><span>Product launches</span><span>Stakeholder management</span><span>Risk tracking</span><span>Go-to-market</span><span>Multilingual rollouts</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="spread" id="about">
+    <div class="wrap">
+      <div class="chapter"><h2>About <em>me</em></h2><p class="label">Chapter 01</p></div>
+      <div class="about">
+        <div class="about-body">
+          <p class="about-lead">I turn client wish lists into clear requirements, requirements into timelines, and timelines into <mark>live products</mark>, keeping clients and developers on the same page the whole way.</p>
+          <p>I manage four products at Callidora Technology: CalliVisit, CalliGrad, AdoraHR and Wayzora. My job covers the whole path to market: scoping features with the team, running delivery, and producing everything a customer, a sales rep or a security guard needs to actually use the product.</p>
+          <p>Before that I coordinated projects at GlobalShala and ran recruitment pipelines at Neuronexus Innovations, so I know how to track several workstreams at once, keep stakeholders informed and flag risks before they turn into delays. I studied Computer Science, which helps me talk with engineers in their own terms.</p>
+        </div>
+        <dl class="facts">
+          <div><dt class="label">Role</dt><dd>Project Manager</dd></div>
+          <div><dt class="label">Company</dt><dd>Callidora Technology</dd></div>
+          <div><dt class="label">Products</dt><dd>CalliVisit, CalliGrad, AdoraHR, Wayzora</dd></div>
+          <div><dt class="label">Based in</dt><dd>Mohali, India</dd></div>
+          <div><dt class="label">Education</dt><dd>B.Tech CSE, Galgotias University</dd></div>
+          <div><dt class="label">Open to</dt><dd>Project manager roles</dd></div>
+        </dl>
+      </div>
+
+      <div class="numbers">
+        <div><b>4</b><span>live products managed at Callidora Technology</span></div>
+        <div><b>3 mo</b><span>CalliGrad delivered on time, from requirements to launch</span></div>
+        <div><b>68</b><span>functional requirements written for CalliGrad across 14 modules</span></div>
+        <div><b>3</b><span>languages of user documentation: English, Hindi, Punjabi</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE + EDUCATION -->
+  <section class="spread band" id="experience">
+    <div class="wrap">
+      <div class="chapter"><h2>Career <em>so far</em></h2><p class="label">Chapter 02</p></div>
+      <div class="timeline">
+        <article class="job">
+          <div class="when"><b>Sep 2026 to Present</b><p class="label">Full-time</p></div>
+          <div>
+            <h3>Project Manager</h3>
+            <p class="org">Callidora Technology · Mohali</p>
+            <ul>
+              <li>Manage four products: CalliVisit, CalliGrad, AdoraHR and Wayzora.</li>
+              <li>CalliGrad: gathered client requirements, wrote the BRD and FRD, handed over to engineering and ran the timeline. Delivered on time, within three months.</li>
+              <li>CalliVisit, AdoraHR and Wayzora: coordinated developers, ran client demos and UAT, drove continuous feedback and improvements, and wrote the user guides and documentation.</li>
+              <li>Designed the Wayzora UI screens used as the developers’ reference.</li>
+              <li>Interviewed candidates for developer and project coordinator roles to help grow the team.</li>
+                            <li>Ran the conference launch: pitch script and product guide, A5 brochures and a 2×2 m standee, all delivered to print deadlines.</li>
+              <li>Shipped trilingual visitor check-in and guard check-out guides (Hindi, English, Punjabi) so gate staff could use the product on day one.</li>
+              <li>Produced Hindi and Hinglish client guides to speed up onboarding for client teams.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="job">
+          <div class="when"><b>Jul 2025 to Jan 2026</b><p class="label">Internship</p></div>
+          <div>
+            <h3>Project Coordinator Intern</h3>
+            <p class="org">GlobalShala Education Pvt. Ltd.</p>
+            <ul>
+              <li>Tracked 3+ projects at once, keeping updates and deliveries on schedule.</li>
+              <li>Coordinated 5+ team members across departments to align goals and tasks.</li>
+              <li>Ran daily task trackers and project schedules, and sent weekly status reports on progress and risks.</li>
+              <li>Scheduled and facilitated 10+ team meetings and client calls.</li>
+              <li>Escalated risks and blockers early, cutting issue resolution time.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="job">
+          <div class="when"><b>Jan 2025 to Apr 2025</b><p class="label">Internship</p></div>
+          <div>
+            <h3>HR Intern</h3>
+            <p class="org">Neuronexus Innovations</p>
+            <ul>
+              <li>Screened 20+ resumes a day against client and job requirements.</li>
+              <li>Coordinated 10+ interviews a week between candidates and hiring managers.</li>
+              <li>Sourced candidates on LinkedIn and Indeed and kept trackers current for 50+ profiles.</li>
+              <li>Wrote and posted job descriptions across multiple job portals.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="chapter edu-head" id="education"><h2>Where I <em>learned</em></h2><p class="label">Chapter 03</p></div>
+      <div class="edu">
+        <article>
+          <p class="label">Oct 2022 to Apr 2026</p>
+          <h3>B.Tech, Computer Science &amp; Engineering</h3>
+          <p>Galgotias University</p>
+          <p class="gpa"><b>8.3</b> GPA</p>
+        </article>
+        <article>
+          <p class="label">Achievements</p>
+          <h3>Leading from early on</h3>
+          <ul class="ach">
+            <li>Team lead of a hackathon team</li>
+            <li>Head Boy of the Science Department in 11th and 12th standard</li>
+            <li>Trophy for best performance in the Science stream, 11th and 12th standard</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section class="spread" id="work">
+    <div class="wrap">
+      <div class="chapter"><h2>Projects <em>&amp; work</em></h2><p class="label">Chapter 04</p></div>
+      <nav class="pindex" aria-label="Projects">
+        <a href="#cv">CalliVisit</a><a href="#cg">CalliGrad</a><a href="#ahr">AdoraHR</a><a href="#wz">Wayzora</a><a href="#launch">Launch kit</a><a href="#docs">Docs &amp; tracking</a>
+      </nav>
+      <article class="case" id="cv">
+        <div class="plate navy">
+          <img class="p-cvdash" src="assets/dashboard.jpg" alt="CalliVisit dashboard showing visitors inside, today’s visitors and average check-in time">
+          <img class="p-cvpop" src="assets/popup.jpg" alt="Checked in at the gate notification">
+          <img class="p-cvbro" src="assets/brochure.jpg" alt="Front of the CalliVisit A5 brochure">
+        </div>
+        <div>
+          <p class="label pnum">Project 01 · Visitor management</p>
+          <div class="tag"><span>Delivery</span><span>UAT</span><span>Documentation</span></div>
+          <h3>CalliVisit</h3>
+          <p class="sum">A browser-based visitor management platform: QR passes, WhatsApp OTP, one-tap host approval, photo badges and a live view of who is inside. Average check-in is 12 seconds.</p>
+          <dl>
+            <div><dt class="label">Brief</dt><dd>Take the product from build to client sign-off and keep it improving after go-live.</dd></div>
+            <div><dt class="label">I did</dt><dd>Worked day to day with the developers on priorities and fixes, ran product demos and UAT with clients, and turned their feedback into a running list of improvements for each release. Tracked deadlines and raised blockers before they slipped the plan.</dd></div>
+            <div><dt class="label">Outcome</dt><dd>Live with clients, with an average gate check-in of 12 seconds.</dd></div>
+            <div><dt class="label">Shipped</dt><dd>User guides and documentation, including Hindi and Hinglish client guides and trilingual guard guides, plus the conference launch kit.</dd></div>
+          </dl>
+          <a class="btn visit" href="https://callivisit.com/" target="_blank" rel="noopener">Visit callivisit.com ↗</a>
+        </div>
+      </article>
+
+      <article class="case flip" id="cg">
+        <div class="plate cobalt-doc" aria-label="CalliGrad product and release phases">
+          <div class="docs">
+            <img class="p-cgmock" src="assets/calligrad-mockup.jpg" alt="CalliGrad alumni dashboard with a Founders' Day reunion invite and check-in and mentor notifications">
+            <img class="p-cgbro" src="assets/calligrad-brochure.jpg" alt="Front of the CalliGrad A5 brochure: Where alumni connections continue.">
+          </div>
+          <ol class="phases"><li>Foundation</li><li>Engagement</li><li>Give, mentor, hire</li><li>Growth</li></ol>
+        </div>
+        <div>
+          <p class="label pnum">Project 02 · Alumni &amp; community</p>
+          <div class="tag"><span>Requirements</span><span>BRD · FRD</span><span>On time in 3 months</span></div>
+          <h3>CalliGrad</h3>
+          <p class="sum">A white-label alumni platform for schools, where each school gets its own database, storage, domain and branding. First client: Strawberry Fields High School, Chandigarh, with about 1,000 alumni.</p>
+          <dl>
+            <div><dt class="label">Brief</dt><dd>Deliver a working platform in three months, in time for the school’s December alumni event.</dd></div>
+            <div><dt class="label">I did</dt><dd>Gathered the client’s requirements, wrote the BRD and FRD, handed them over to the engineers and coordinated the build. I also built the timeline sheet that kept a three-month delivery on track, and used a prioritised kickoff question list so the client’s key decisions came early.</dd></div>
+            <div><dt class="label">Shipped</dt><dd>BRD, FRD and an SRS with 68 functional requirements across 14 modules (42 marked Must), split into four phased releases with acceptance criteria.</dd></div>
+            <div><dt class="label">Outcome</dt><dd>Delivered successfully within the three-month deadline.</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="case" id="ahr">
+        <div class="plate shot adora"><img src="assets/adorahr.jpg" alt="AdoraHR homepage: Every Employee, Orbiting One Clear System, with an employee directory preview"></div>
+        <div>
+          <p class="label pnum">Project 03 · HR management</p>
+          <div class="tag"><span>Delivery</span><span>UAT</span><span>HRMS</span></div>
+          <h3>AdoraHR</h3>
+          <p class="sum">An HR platform for multi-branch organisations that combines payroll with statutory deductions, face- and GPS-verified attendance, performance reviews with OKRs, and org charts.</p>
+          <dl>
+            <div><dt class="label">Outcome</dt><dd>Live product. One customer reports it cut a payroll run from five days to about two hours.</dd></div>
+            <div><dt class="label">I did</dt><dd>Coordinated the developers across the payroll, attendance and performance modules, ran demos and UAT so HR teams could test real workflows, and fed their feedback back into the build. Wrote the user guide and documentation and kept the tracker current on blockers and deadlines.</dd></div>
+          </dl>
+          <a class="btn visit" href="https://www.adorahr.com/" target="_blank" rel="noopener">Visit adorahr.com ↗</a>
+        </div>
+      </article>
+
+      <article class="case flip" id="wz">
+        <div class="plate shot wayz"><img src="assets/wayzora.jpg" alt="Wayzora illustration of a branded truck travelling between two map pins to a warehouse"></div>
+        <div>
+          <p class="label pnum">Project 04 · Logistics operations</p>
+          <div class="tag"><span>Delivery</span><span>UI design</span><span>Logistics</span></div>
+          <h3>Wayzora</h3>
+          <p class="sum">An operations workspace for transport companies that handles lorry receipts, vehicle allocation and each client’s own workflows. It is live for Attar Logistics.</p>
+          <dl>
+            <div><dt class="label">I did</dt><dd>Designed the UI screens the developers built from, so design questions were settled before code. Then coordinated the build, ran demos and UAT with the client, collected feedback for improvements, wrote the documentation and tracked blockers and deadlines.</dd></div>
+            <div><dt class="label">Outcome</dt><dd>Live for Attar Logistics.</dd></div>
+                      </dl>
+          <a class="btn visit" href="https://attarlogistics.wayzora.com/dashboard" target="_blank" rel="noopener">Open Wayzora ↗</a>
+        </div>
+      </article>
+
+      <p class="label" style="margin:clamp(48px,6vw,80px) 0 28px">More from CalliVisit</p>
+
+      <article class="case" id="launch">
+        <div class="plate blue">
+          <img class="p-standee" src="assets/standee.jpg" alt="CalliVisit 2 by 2 metre conference standee reading Every arrival. Under control.">
+          <img class="p-script" src="assets/script.jpg" alt="Cover of the CalliVisit conference pitch script">
+          <img class="p-brochure" src="assets/brochure.jpg" alt="Front of the CalliVisit A5 brochure">
+        </div>
+        <div>
+          <div class="tag"><span>Launch</span><span>Print</span><span>Go-to-market</span></div>
+          <h3>CalliVisit conference launch kit</h3>
+          <p class="sum">Everything the team needed to pitch CalliVisit at a trade conference, delivered as one coordinated kit.</p>
+          <dl>
+            <div><dt class="label">Brief</dt><dd>Show up at the conference with a clear story and materials that book demos.</dd></div>
+            <div><dt class="label">I did</dt><dd>Wrote the pitch script and product guide, briefed and reviewed the A5 brochures and the 2×2 m standee, and managed print specs and bleed.</dd></div>
+            <div><dt class="label">Shipped</dt><dd>Pitch script, two brochure editions, standee with QR to book a demo.</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="case flip" id="docs">
+        <div class="plate taupe docplate" aria-label="Requirement documents, a Jira-style board and a project timeline sheet">
+          <img class="p-srs" src="assets/doc-srs.jpg" alt="First page of the CalliGrad Software Requirements Specification">
+          <img class="p-kick" src="assets/doc-kickoff.jpg" alt="First page of the SFHS kickoff requirement questions">
+          <div class="sheet" aria-hidden="true">
+            <div class="sheet-top"><b>CalliGrad timeline.xlsx</b><span>M<span class="lg">onth </span>1</span><span>M<span class="lg">onth </span>2</span><span>M<span class="lg">onth </span>3</span></div>
+            <div class="sheet-row"><em>Requirements · BRD &amp; FRD</em><i style="--s:0;--e:1.1"></i></div>
+            <div class="sheet-row"><em>Handover to engineering</em><i style="--s:.9;--e:1.3"></i></div>
+            <div class="sheet-row"><em>Build &amp; reviews</em><i style="--s:1.1;--e:2.6"></i></div>
+            <div class="sheet-row"><em>Demos &amp; UAT</em><i style="--s:2.2;--e:2.85"></i></div>
+            <div class="sheet-row"><em>Launch</em><i class="ms" style="--s:2.8;--e:3"></i></div>
+          </div>
+          <div class="board" aria-hidden="true">
+            <div><span>To do</span><p>User guide</p></div>
+            <div><span>In progress</span><p>UAT fixes</p></div>
+            <div><span>Done</span><p>FRD sign-off</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="tag"><span>Documentation</span><span>Jira</span><span>Excel</span></div>
+          <h3>Documentation &amp; project tracking</h3>
+          <p class="sum">The paperwork that keeps a project honest: specs engineers can build from, boards that show where every task stands, and timelines everyone can read.</p>
+          <dl>
+            <div><dt class="label">Brief</dt><dd>Give clients, developers and QA one source of truth on every product.</dd></div>
+            <div><dt class="label">I did</dt><dd>Wrote SRS, BRD and FRD documents with checkbox acceptance criteria, kickoff question lists and user guides. Ran tasks, bugs and sprints in Jira, and kept timeline and status sheets in Excel and Google Sheets with owners, milestones and risks.</dd></div>
+            <div><dt class="label">Shipped</dt><dd>CalliGrad SRS and phase-wise acceptance criteria, client kickoff questions, user guides in English, Hindi and Punjabi, project timelines and weekly status reports.</dd></div>
+          </dl>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="spread" id="process" style="padding-top:0">
+    <div class="wrap">
+      <div class="chapter"><h2>How I run a <em>project</em></h2><p class="label">Chapter 05</p></div>
+      <ol class="steps">
+        <li><h3>Kickoff</h3><p>A prioritised question list for the client, so the decisions that block the plan get answered first.</p></li>
+        <li><h3>Requirements</h3><p>BRD for the business goals, FRD for testable behaviour, with acceptance criteria QA can tick off.</p></li>
+        <li><h3>Plan &amp; handover</h3><p>A timeline sheet with owners and milestones, and a walkthrough with engineers before build starts.</p></li>
+        <li><h3>Build &amp; UAT</h3><p>Daily tracking, early escalation of blockers, then demos and UAT with the client on real workflows.</p></li>
+        <li><h3>Launch &amp; improve</h3><p>User guides in the users’ own language, then a steady feedback loop into the next release.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="spread" id="skills" style="padding-top:0">
+    <div class="wrap">
+      <div class="chapter"><h2>Skills &amp; <em>toolkit</em></h2><p class="label">Chapter 06</p></div>
+      <div class="skills">
+        <div><h3>Project management</h3>
+          <ul class="chips fill"><li>Project coordination</li><li>Task tracking</li><li>Timeline &amp; deadline management</li><li>Requirement analysis</li><li>BRD &amp; FRD writing</li><li>UAT &amp; client demos</li><li>UI wireframing</li><li>Risk escalation</li><li>Launch &amp; go-to-market</li></ul></div>
+        <div><h3>People</h3>
+          <ul class="chips"><li>Stakeholder management</li><li>Client relationship management</li><li>Interviewing developers &amp; coordinators</li><li>Recruitment &amp; screening</li><li>Documentation &amp; reporting</li></ul></div>
+        <div><h3>Tools</h3>
+          <ul class="chips"><li>Jira</li><li>Trello</li><li>Slack</li><li>Google Sheets</li><li>Excel</li><li>PowerPoint</li><li>Word</li><li>LinkedIn Recruiter</li><li>GitHub</li><li>VS Code</li><li>Python</li><li>JavaScript</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="label">Chapter 07 · Say hello</p>
+      <h2>Got a project<br>to ship?</h2>
+      <p style="max-width:52ch;font-size:19px">Need someone to plan it, run it and get it out the door? Or just want to talk products? Reach out.</p>
+      <p class="email" id="email">goelkanishak423@gmail.com</p>
+      <div class="contact-row">
+        <button class="btn" type="button" id="copy">Copy email</button>
+        <a class="btn ghost" href="assets/Kanishak-Goel-Resume.pdf" target="_blank" rel="noopener">View resume ↗</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/kanishak-goel-%F0%9F%87%AE%F0%9F%87%B3-9227a531a/" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Kanishak Goel</span><span>Project Manager · Callidora Technology · Mohali</span></div>
+</footer>
+
+
+<script>
+  document.getElementById('copy').addEventListener('click', async e => {
+    const text = document.getElementById('email').textContent.trim();
+    try { await navigator.clipboard.writeText(text); e.target.textContent = 'Copied'; }
+    catch { const r = document.createRange(); r.selectNodeContents(document.getElementById('email')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); e.target.textContent = 'Selected, press Ctrl+C'; }
+    setTimeout(() => e.target.textContent = 'Copy email', 2000);
+  });
+  // reveal on scroll: only elements below the first screen start hidden
+  (() => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    const els = [...document.querySelectorAll('.case, .steps li, .numbers > div, .job, .edu article, .skills > div')];
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+    els.forEach((el, i) => { if (el.getBoundingClientRect().top > innerHeight) { el.classList.add('rv'); el.style.transitionDelay = (i % 4) * 60 + 'ms'; io.observe(el); } });
+  })();
+  // highlight the current project in the index
+  (() => {
+    const links = [...document.querySelectorAll('.pindex a')];
+    if (!('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '-40% 0px -55% 0px' });
+    links.forEach(l => { const t = document.querySelector(l.getAttribute('href')); if (t) io.observe(t); });
+  })();
+</script>
+
+</body>
+</html>
